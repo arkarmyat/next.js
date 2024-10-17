@@ -204,7 +204,7 @@ export async function startServer(
       err.code === 'EADDRINUSE' &&
       portRetryCount < 10
     ) {
-      Log.warn(`Port ${port} is in use, trying ${port + 1} instead.`)
+      // Log.warn(`Port ${port} is in use, trying ${port + 1} instead.`);
       port += 1
       portRetryCount += 1
       server.listen(port, hostname)

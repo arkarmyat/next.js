@@ -133,6 +133,7 @@ function handleLoading(
             }
           }
         }
+
         if (img.parentElement) {
           const { position } = window.getComputedStyle(img.parentElement)
           const valid = ['absolute', 'fixed', 'relative']
@@ -219,6 +220,7 @@ const ImageElement = forwardRef<HTMLImageElement | null, ImageElementProps>(
           // eslint-disable-next-line no-self-assign
           img.src = img.src
         }
+
         if (process.env.NODE_ENV !== 'production') {
           if (!src) {
             console.error(`Image is missing required "src" property:`, img)
@@ -229,6 +231,7 @@ const ImageElement = forwardRef<HTMLImageElement | null, ImageElementProps>(
             )
           }
         }
+
         if (img.complete) {
           handleLoading(
             img,
@@ -314,6 +317,7 @@ function ImagePreload({
   isAppRouter: boolean
   imgAttributes: ImgProps
 }) {
+  console.log(imgAttributes, 'attributes')
   const opts = {
     as: 'image',
     imageSrcSet: imgAttributes.srcSet,
